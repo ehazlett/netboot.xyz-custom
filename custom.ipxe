@@ -3,5 +3,20 @@
 ### netboot.xyz-custom menu
 ###
 
-dhcp
-chain http://10.0.1.29/pxelinux.0
+:custom
+clear custom_choice
+menu Infra
+item --gap Installers
+item debian ${space} Debian Installer
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
+goto custom_exit
+
+:debian
+kernel http://boothttp.int/debian-installer/amd64/linux
+initrd http://boothttp.int/debian-installer/amd64/initrd.gz
+
+:custom_exit
+chain utils.ipxe
+exit
