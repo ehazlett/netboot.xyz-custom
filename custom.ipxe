@@ -31,6 +31,7 @@ boot
 :terra
 kernel http://boothttp.int/terra/vmlinuz
 initrd http://boothttp.int/terra/initrd.img
+imgargs ip=dhcp quiet init=/sbin/init boot=live console=ttyS0 console=tty0
 boot
 
 :custom_exit
