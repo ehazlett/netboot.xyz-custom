@@ -5,18 +5,32 @@
 
 :custom
 clear custom_choice
+clear menu
 menu Infra
+item --gap Local
+item local ${space} Boot from HD
 item --gap Installers
 item debian ${space} Debian Buster
-item --gap
+item terra ${space} Terra OS
 item custom_exit ${space} Exit
 choose custom_choice || goto custom_exit
+isset ${menu} && set timeout 0 || set timeout 10000
+choose --timeout ${timeout} --default ${menu} menu || goto local
 echo ${cls}
 goto ${custom_choice}
 
+:local
+echo Booting from local disks ...
+exit 0
+
 :debian
-kernel http://boothttp.int/debian/buster/amd64/linux priority=low mirror/suite=buster vga=788 theme=dark -- initrd=initrd.gz
-initrd http://boothttp.int/debian/buster/amd64/initrd.gz
+kernel http://boothttp.int/debian-installer/amd64/linux priority=low mirror/suite=buster vga=788 theme=dark -- initrd=initrd.gz
+initrd http://boothttp.int/debian-installer/amd64/initrd.gz
+boot
+
+:terra
+kernel http://boothttp.int/terra/vmlinuz
+initrd http://boothttp.int/terra/initrd.img
 boot
 
 :custom_exit
