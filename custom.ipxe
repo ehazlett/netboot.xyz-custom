@@ -27,9 +27,8 @@ initrd http://boothttp.int/debian-installer/amd64/initrd.gz
 boot
 
 :terra
-kernel http://boothttp.int/terra/vmlinuz
-initrd http://boothttp.int/terra/initrd.img
-imgargs ip=dhcp quiet init=/sbin/init boot=live console=ttyS0 console=tty0
+kernel http://boothttp.int/terra/vmlinuz ip=dhcp quiet init=/sbin/init boot=live console=ttyS0 console=tty0
+initrd http://boothttp.int/terra/initrd.img 
 boot
 
 :custom_exit
