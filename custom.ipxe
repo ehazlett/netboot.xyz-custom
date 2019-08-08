@@ -3,10 +3,5 @@
 ### netboot.xyz-custom menu
 ###
 
-:start
-echo Hello world!
-sleep 10
-goto custom_exit
-
-:custom_exit
-exit 0
+dhcp
+chain http://10.0.1.4/pxelinux.0
