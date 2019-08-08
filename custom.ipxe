@@ -15,9 +15,8 @@ echo ${cls}
 goto ${custom_choice}
 
 :debian
-kernel http://boothttp.int/debian-installer/amd64/linux
+kernel http://boothttp.int/debian-installer/amd64/linux priority=low vga=788 theme=dark initrd=initrd.gz
 initrd http://boothttp.int/debian-installer/amd64/initrd.gz
-imgargs linux priority=low vga=788 theme=dark
 boot
 
 :custom_exit
