@@ -14,8 +14,6 @@ item debian ${space} Debian Buster
 item terra ${space} Terra OS
 item custom_exit ${space} Exit
 choose custom_choice || goto custom_exit
-isset ${menu} && set timeout 0 || set timeout 10000
-choose --timeout ${timeout} --default ${menu} menu || goto local
 echo ${cls}
 goto ${custom_choice}
 
