@@ -5,13 +5,13 @@
 
 :custom
 clear custom_choice
-clear menu
 menu Infra
 item --gap Local
 item local ${space} Boot from HD
 item --gap Installers
 item debian ${space} Debian Buster
 item terra ${space} Terra OS
+item --gap
 item custom_exit ${space} Exit
 choose custom_choice || goto custom_exit
 echo ${cls}
