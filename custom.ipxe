@@ -16,6 +16,7 @@ goto custom_exit
 :debian
 kernel http://boothttp.int/debian-installer/amd64/linux
 initrd http://boothttp.int/debian-installer/amd64/initrd.gz
+boot || goto custom_exit
 
 :custom_exit
 chain utils.ipxe
