@@ -3,12 +3,6 @@
 ### netboot.xyz-custom menu
 ###
 
-
-#!ipxe
-###
-### netboot.xyz-custom menu
-###
-
 :custom
 clear custom_choice
 menu Infra
