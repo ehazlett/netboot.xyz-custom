@@ -4,4 +4,4 @@
 ###
 
 dhcp
-chain http://10.0.1.4/pxelinux.0
+chain http://10.0.1.29/pxelinux.0
