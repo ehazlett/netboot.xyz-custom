@@ -8,15 +8,16 @@ clear custom_choice
 menu Infra
 item --gap Installers
 item debian ${space} Debian Installer
+item --gap
+item custom_exit ${space} Exit
 choose custom_choice || goto custom_exit
 echo ${cls}
 goto ${custom_choice}
-goto custom_exit
 
 :debian
 kernel http://boothttp.int/debian-installer/amd64/linux
 initrd http://boothttp.int/debian-installer/amd64/initrd.gz
-boot || goto custom_exit
+boot
 
 :custom_exit
 chain utils.ipxe
